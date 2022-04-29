@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Insurance Policy</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+	.btn{
+		background: linear-gradient(to bottom right, red, blue);
+		color: white;
+	}
+	.top{
+		margin-top: 100px;
+	}
+	.fform{
+		/*background-color: #340078;*/
+		background-color: #eee;
+		padding: 50px;
+		margin-top: 70px;
+
+	}
+	.heading{
+		background-color: #28015c;
+		padding: 10px;
+		color: white;
+		text-align: center;
+	}
+</style>
+</head>
+<body style="background: linear-gradient(to bottom right, red, blue); background-repeat: no-repeat; background-size: 100% 100%; background-attachment: fixed;">
+	<div class="col-lg-12 back">
+		<div class="container">
+			<div class="col-lg-5 col-lg-offset-3 top">
+				<div class="col-lg-12 heading">
+					<h3><b>Enter Fields details</b></h3>
+				</div>
+				<form class="form fform" action="/prediction" method="post">
+
+					<div class="form-group">
+						<input type="number" name="estimated insect count" placeholder="Estimated insect count" class="form-control">
+					</div>
+<b>Choose Crop type: </b>
+						<input type="radio" name="crop type" value='Kharif'> kharif
+						<input type="radio" name="crop type" value='Rabi'> Rabi
+						<br> <br>
+<b>Choose Soil type: </b>
+						<input type="radio" name="soil type" value='Alluvial'> Alluvial
+						<input type="radio" name="soil type" value='Black-Cotton'> Black-Cotton
+						<br> <br>
+<b>Pesticide Use Category: </b>
+						<input type="radio" name="pesticide use category" value='Insecticides'> Insecticides
+						<input type="radio" name="pesticides use category" value='Bactericides'> Bactericides
+						<input type="radio" name="pesticides use category" value='Herbicides'> Herbicides
+						<br> <br>
+
+					<div class="form-group">
+						<input type="number" name="doses in week" placeholder="Doses of Pesticides in a week" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<input type="number" name="number of week used" placeholder="Number of week used" class="form-control">
+					</div>
+					<div class="form-group">
+						<input type="number" name="number of week quit" placeholder="Number of week quit" class="form-control">
+					</div>
+<b>Season:</b>
+						<input type="radio" name="season" value='Summer'> Summer 
+						<input type="radio" name="season" value='Monsoon'> Monsoon 
+						<input type="radio" name="season" value='Winter'> Winter
+
+						<br> <br>
+
+						<div class="form-group">
+							<input type="submit" name="submit" value="Submit" class="btn btn-md">
+						</div>
+
+						<div class="form-group">
+							<b>Prediction: </b> {{ prediction_output }}
+						</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
